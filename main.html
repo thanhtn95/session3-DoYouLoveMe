@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<div>
+    <h2> Do You Love Me ?</h2>
+    <input type="button" value="YES" style="position: absolute;left: 15px;top: 70px"  onclick="love()">
+    <input type="button" id="no" style="position: absolute;left: 120px;top: 70px" value="NO" onmouseover="move()">
+</div>
+</body>
+<script>
+    function love() {
+        alert("<3")
+    }
+
+    function move() {
+        let no = document.getElementById("no");
+        let wh = parseInt(window.innerHeight);
+        let ww = parseInt(window.innerWidth);
+        let rh = parseInt(no.getBoundingClientRect().top);
+        let rw = parseInt(no.getBoundingClientRect().left);
+        let tmp1 = rh;
+        let tmp2 =rw;
+        if(rh == tmp1 && rw == tmp2){
+            rh = Math.random()*wh;
+            rw = Math.random()*ww;
+        }
+        no.style.left=rw+"px";
+        no.style.top=rh+"px";
+    }
+</script>
+</html>
